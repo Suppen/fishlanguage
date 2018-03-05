@@ -5,6 +5,7 @@
  **************************/
 
 import React from "react";
+import Layout from "../layouts/Layout.jsx";
 import FishExecutor from "fish-interpreter";
 import CodeView from "./CodeView.jsx";
 import ExecutorControls from "./ExecutorControls.jsx";
@@ -94,31 +95,33 @@ class FishExecutorView extends React.Component {
 
 	render() {
 		return (
-			<div className="code-executor-view col">
-				<CodeView
-				  grid={this.state.grid}
-				  instructionPointer={this.state.instructionPointer}
-				  />
-				<ExecutorControls
-				  intervalTime={this.state.intervalTime}
-				  changeIntervalTime={this.changeIntervalTime}
-				  hasStarted={this.state.hasStarted}
-				  isPaused={this.state.isPaused}
-				  hasTerminated={this.state.hasTerminated}
-				  run={this.executor.run}
-				  pause={this.executor.pause}
-				  resume={this.executor.resume}
-				  step={this.executor.step}
-				  giveInput={this.executor.giveInput}
-				  reset={this.reset.bind(this, this.initialStack)}
-				  setInitialStack={this.reset}
-				  inputBuffer={this.state.inputBuffer}
-				  stackSnapshot={this.state.stackSnapshot}
-				  output={this.state.output}
-				  advances={this.state.advances}
-				  error={this.state.error}
-				  />
-			</div>
+			<Layout>
+				<div className="code-executor-view col">
+					<CodeView
+					  grid={this.state.grid}
+					  instructionPointer={this.state.instructionPointer}
+					  />
+					<ExecutorControls
+					  intervalTime={this.state.intervalTime}
+					  changeIntervalTime={this.changeIntervalTime}
+					  hasStarted={this.state.hasStarted}
+					  isPaused={this.state.isPaused}
+					  hasTerminated={this.state.hasTerminated}
+					  run={this.executor.run}
+					  pause={this.executor.pause}
+					  resume={this.executor.resume}
+					  step={this.executor.step}
+					  giveInput={this.executor.giveInput}
+					  reset={this.reset.bind(this, this.initialStack)}
+					  setInitialStack={this.reset}
+					  inputBuffer={this.state.inputBuffer}
+					  stackSnapshot={this.state.stackSnapshot}
+					  output={this.state.output}
+					  advances={this.state.advances}
+					  error={this.state.error}
+					  />
+				</div>
+			</Layout>
 		);
 	}
 }

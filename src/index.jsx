@@ -14,7 +14,7 @@ import "./styles/style.scss";
 import "bootstrap";
 import ReactDOM from "react-dom";
 import React from "react";
-import FishExecutorView from "./js/components/FishExecutorView.jsx";
+import FishExecutorView from "./js/components/executor/FishExecutorView.jsx";
 
 const source = `0voa          \u0000                 ~/?=0:\\
  voa            oooo'Buzz'~<     /
@@ -25,15 +25,4 @@ const source = `0voa          \u0000                 ~/?=0:\\
  * Start the thing *
  *******************/
 
-const layout = (
-	<div className="container bg-white">
-		<div className="row">
-			<h1 className="col text-center">{"The Online ><> Interpreter"}</h1>
-		</div>
-		<div className="row">
-			<FishExecutorView source={source} />
-		</div>
-	</div>
-);
-
-ReactDOM.render(layout, document.getElementById("root"));
+ReactDOM.render(<FishExecutorView source={source} />, document.getElementById("root"));
