@@ -1,0 +1,66 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+html {
+	margin-top: 2rem;
+}
+
+.fish-program-code-view {
+	border-collapse: collapse;
+
+	.fish-code-cell {
+		border: solid #f0f0f0 1px;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+	}
+
+	.fish-code-cell.active {
+		background-color: red;
+	}
+}
+
+.fish-program-executor-controls {
+	> div {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.error {
+		font-size: 3rem;
+	}
+
+	label {
+		font-weight: bold;
+	}
+	label button + span {
+		margin-left: 1rem;
+	}
+
+	.execution-speed input[type=range] {
+		direction: rtl;
+	}
+}
+
+.buffer-view {
+	overflow-x: auto;
+
+	table {
+		border-collapse: collapse;
+
+		td {
+			border: solid #e0e0e0 1px;
+			height: 20px;
+			min-width: 1rem;
+			text-align: center;
+		}
+	}
+}
+
+.output-view pre {
+	min-height: 1rem;
+	max-height: 10rem;
+	overflow-y: auto;
+}
