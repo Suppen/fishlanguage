@@ -141,7 +141,7 @@ class ExecutorControls extends React.Component {
 				{!hasStarted
 				  ? (
 					<div>
-						<label>Initial stack</label>
+						<label>Set initial stack</label>
 					  	<div>
 							<textarea
 							  ref={(textarea) => this.initialStackInput = textarea}
