@@ -47,7 +47,7 @@ class BufferView extends React.Component {
 		return (
 			<div className={this.props.className}>
 				<label>
-					<button type="button" className="btn btn-secondary btn-sm" onClick={this.toggleViewmode}><span className="fas fa-eye"></span></button>
+					<button type="button" className="btn btn-secondary btn-sm" onClick={this.toggleViewmode}>{this.state.viewMode === BufferView.CHARACTERS ? "A" : "#"}</button>
 					<span>{this.props.label}</span>
 				</label>
 				<div className="buffer-view">

@@ -47,7 +47,7 @@ class OutputView extends React.Component {
 		return (
 			<div className={this.props.className + " output-view"}>
 				<label>
-					<button type="button" className="btn btn-secondary btn-sm" onClick={this.toggleViewmode}><span className="fas fa-eye"></span></button>
+					<button type="button" className="btn btn-secondary btn-sm" onClick={this.toggleViewmode}>{this.state.viewMode === OutputView.TEXT ? "A" : "x"}</button>
 					<span>Output</span>
 				</label>
 				<pre className="bg-light">{displayText}</pre>
