@@ -80,8 +80,10 @@ class ExecutorControls extends React.Component {
 		// Find out how to treat it
 		let list = null;
 		if (type === ExecutorControls.TEXT) {
-			// Just split it into individual characters
-			list = text.split("");
+			// Split into individual characters and take their unicode value
+			list = text
+			  .split("")
+			  .map((c) => c.charCodeAt(0));
 		} else if (type === ExecutorControls.NUMBERS) {
 			// This is a comma separated list of numbers
 			list = text
