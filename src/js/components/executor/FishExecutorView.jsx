@@ -96,7 +96,7 @@ class FishExecutorView extends React.Component {
 	render() {
 		return (
 			<Layout>
-				<div className="code-executor-view col">
+				<div className="fish-code-executor-view col">
 					<CodeView
 					  grid={this.state.grid}
 					  instructionPointer={this.state.instructionPointer}
@@ -113,6 +113,7 @@ class FishExecutorView extends React.Component {
 					  step={this.executor.step}
 					  giveInput={this.executor.giveInput}
 					  reset={this.reset.bind(this, this.initialStack)}
+					  edit={this.props.edit}
 					  setInitialStack={this.reset}
 					  inputBuffer={this.state.inputBuffer}
 					  stackSnapshot={this.state.stackSnapshot}

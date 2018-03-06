@@ -7,6 +7,10 @@ html {
 	margin-top: 2rem;
 }
 
+.layout > div:nth-child(3) {
+	margin-top: 2rem;
+}
+
 .fish-program-code-view {
 	border-collapse: collapse;
 
@@ -63,4 +67,10 @@ html {
 	min-height: 1rem;
 	max-height: 10rem;
 	overflow-y: auto;
+}
+
+.fish-code-editor {
+	textarea {
+		height: 25rem;
+	}
 }

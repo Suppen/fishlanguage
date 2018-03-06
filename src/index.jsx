@@ -14,15 +14,10 @@ import "./styles/style.scss";
 import "bootstrap";
 import ReactDOM from "react-dom";
 import React from "react";
-import FishExecutorView from "./js/components/executor/FishExecutorView.jsx";
-
-const source = `0voa          \u0000                 ~/?=0:\\
- voa            oooo'Buzz'~<     /
- >1+:aa*1+=?;::5%:{3%:@*?\\?/'zziF'oooo/
- ^oa                 n:~~/`;
+import Controller from "./js/components/Controller.jsx";
 
 /*******************
  * Start the thing *
  *******************/
 
-ReactDOM.render(<FishExecutorView source={source} />, document.getElementById("root"));
+ReactDOM.render(<Controller />, document.getElementById("root"));

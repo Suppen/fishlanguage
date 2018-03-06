@@ -34,10 +34,7 @@ class ExecutorControls extends React.Component {
 		const text = this.initialStackInput.value;
 
 		// Make a list of it and set it as initial stack
-		const list = ExecutorControls.convertToList(text, type)
-		  // The stack works on numbers. Convert the list to numbers
-		  .map((c) => c.charCodeAt(0));
-
+		const list = ExecutorControls.convertToList(text, type);
 		this.props.setInitialStack(list);
 
 		// Clear the textarea
@@ -62,8 +59,9 @@ class ExecutorControls extends React.Component {
 		// Get the text
 		const text = this.inputInput.value;
 
-		// Make a list of it and give to the program
+		// Make a character list of it and give it to the program
 		ExecutorControls.convertToList(text, type)
+		  .map((num) => String.fromCharCode(num))
 		  .forEach((c) => this.props.giveInput(c));
 
 		// Clear the textarea
@@ -91,10 +89,8 @@ class ExecutorControls extends React.Component {
 			  .split(",")
 			  // Remove leading and trailing whitespace
 			  .map((num) => num.trim())
-			  // Convert them all to integers
-			  .map((num) => Number.parseInt(num))
-			  // Convert the ints to chars
-			  .map((num) => String.fromCharCode(num));
+			  // Convert them all to numbers
+			  .map((num) => Number(num));
 		}
 
 		return list;
@@ -102,7 +98,7 @@ class ExecutorControls extends React.Component {
 
 	render() {
 		// Shorthands for the props
-		const {intervalTime, changeIntervalTime, hasStarted, isPaused, hasTerminated, run, pause, resume, step, reset, inputBuffer, stackSnapshot, output, error, advances} = this.props;
+		const {intervalTime, changeIntervalTime, hasStarted, isPaused, hasTerminated, run, pause, resume, step, reset, edit, inputBuffer, stackSnapshot, output, error, advances} = this.props;
 
 		// Reverse the intervalTime calculation
 		const processedIntervalTime = Math.sqrt(10**3 * intervalTime);
@@ -126,6 +122,7 @@ class ExecutorControls extends React.Component {
 								  ]
 						  : <button type="button" className="btn btn-danger" onClick={reset}>Reset</button>
 						}
+						<button type="button" className="btn btn-warning" onClick={edit}>Return to editor</button>
 					</div>
 				</div>
 				{/* The error */}
@@ -143,11 +140,11 @@ class ExecutorControls extends React.Component {
 					<div>
 						<label>Set initial stack</label>
 					  	<div>
-							<textarea
-							  ref={(textarea) => this.initialStackInput = textarea}
+							<input
+					  		  type="text"
+							  ref={(input) => this.initialStackInput = input}
 							  className="form-control"
-							  >
-							</textarea>
+							  />
 							<div className="btn-group">
 								<button type="button" className="btn btn-primary" onClick={this.setInitialStack.bind(this, ExecutorControls.TEXT)}>Interpret as text</button>
 								<button type="button" className="btn btn-primary" onClick={this.setInitialStack.bind(this, ExecutorControls.NUMBERS)}>Interpret as array</button>
