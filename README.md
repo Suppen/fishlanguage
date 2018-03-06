@@ -1,4 +1,4 @@
-The Online [><>](https://esolangs.org/wiki/Fish) Editor
+The Online [><>](https://esolangs.org/wiki/Fish) Interpreter
 =====================
 
 [fishlanguage.com](https://fishlanguage.com) has been reborn! Rewritten completely from scratch after first having been abandoned, because apparently you guys were not happy with [TIO](https://tio.run/#fish).
