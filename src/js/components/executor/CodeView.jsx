@@ -22,7 +22,7 @@ function CodeView({grid, instructionPointer}) {
 							if (Math.max(instructionPointer.x, 0) === x && instructionPointer.y === y) {	// XXX The IP starts at x = -1, but will never go there again
 								className = "active";
 							}
-							return (<td key={x} className={"fish-code-cell " + className}>{cell}</td>);
+							return (<td key={x} className={"fish-code-cell " + className}>{String.fromCharCode(cell)}</td>);
 						})}
 					</tr>
 				))}
