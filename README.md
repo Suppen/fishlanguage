@@ -1,7 +1,7 @@
 The Online [><>](https://esolangs.org/wiki/Fish) Interpreter
 =====================
 
-[fishlanguage.com](https://fishlanguage.com) has been reborn! Rewritten completely from scratch after first having been abandoned, because apparently you guys were not happy with [TIO](https://tio.run/#fish).
+[https://suppen.no/fishlanguage](https://suppen.no/fishlanguage) (earlier fishlanguage.com) has been reborn! Rewritten completely from scratch after first having been abandoned, because apparently you guys were not happy with [TIO](https://tio.run/#fish).
 
 It features a number of improvements, like the ability to view output as hex, or view input as numbers or text. Also, pretty much instant code execution without hanging the entire browser
 
