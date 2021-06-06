@@ -1,11 +1,4 @@
-# Vim files
 *.swp
-
-# Node modules
 node_modules/
-
-# The build
 build/
-
-# Package lock
-package-lock.json
+.idea

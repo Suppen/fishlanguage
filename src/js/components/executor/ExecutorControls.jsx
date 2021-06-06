@@ -6,7 +6,6 @@
 
 import React from "react";
 import StateView from "./StateView.jsx";
-import _ from "lodash";
 
 /**********************************
  * The ExecutorControls component *
