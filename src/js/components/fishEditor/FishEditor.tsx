@@ -1,6 +1,5 @@
 import { FC, useRef } from 'react';
 import Layout from '../layouts/Layout';
-import useLocalstorage from '../../hooks/useLocalstorage';
 
 const STORAGE_KEY = 'code';
 
@@ -11,11 +10,10 @@ interface FishEditorProps {
 const FishEditor: FC<FishEditorProps> = ({ execute }) => {
 	const editor = useRef<HTMLTextAreaElement>(null);
 
-	const localStorage = useLocalstorage();
-	const defaultValue = localStorage.get(STORAGE_KEY) || '';
+	const defaultValue = localStorage.getItem(STORAGE_KEY) ?? '';
 
 	const submit = () => {
-		localStorage.set(STORAGE_KEY, editor.current?.value || '');
+		localStorage.setItem(STORAGE_KEY, editor.current?.value ?? '');
 
 		execute();
 	};
